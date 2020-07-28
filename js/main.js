@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
             grid.appendChild(square)
             squares.push(square)
         }
+
+        // add numbers
+        for (let i = 0; i < squares.length; i++) {
+        	let total = 0
+        	const isLeftEdge = (1 % width === 0)
+        	const isRightEdge = (1 % width === width -1)
+
+        	if(squares[i].classList.contains('valid')){
+        		if(i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++
+        	}
+        }
+
+
+
     }
     createBoard()
 
